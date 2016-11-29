@@ -7,7 +7,7 @@
  * the assignment. Feel free to change this file up if you want to test other
  * parts.
  *
- * @author lamonta
+ * @author richj0985
  */
 
 public class TestShoppe {
