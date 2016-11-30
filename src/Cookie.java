@@ -7,18 +7,41 @@
  * 
  * @author YOURNAMEHERE
  */
-public class Cookie {
+public class Cookie extends DessertItem {
     
+    private int number;
+    private int pricePer12;
     
     public Cookie(String name, int number, int pricePer12)
     {
+        super(name);
         
+        this.number = number;
+        this.pricePer12 = pricePer12;
     }
 
     
+    public int getNumber(){
+        return number;
+    }
+    
+    public int pricePer12(){
+        return pricePer12;
+    }
+    
+    
+    @Override
     public String toString()
     {
-        return "";
+        String output = DessertShoppe.cents2dollarsAndCents(number);
+        return "The cost of cookies is " + output;
+    }
+
+    @Override
+    public int getCost() {
+       //the integer which returns the cost of ONE Cookie, therefore divide number by 12 (e.g 24/12 = 2 dozens)
+        int cost = (this.number/12)*this.pricePer12;
+        return cost;
     }
     
 }

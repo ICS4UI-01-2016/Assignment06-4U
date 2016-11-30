@@ -11,7 +11,7 @@
  * 
  * @author YOURNAMEHERE
  */
-public class Sundae{
+public class Sundae extends IceCream{
     
 
     
@@ -22,6 +22,7 @@ public class Sundae{
     
 
     
+    @Override
     public String toString()
     {
         return "";
