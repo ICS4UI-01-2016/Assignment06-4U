@@ -13,15 +13,22 @@
  */
 public class Sundae{
     
-
+    private String icName;
+    private int icCost;
+    private String toppingName;
+    private int toppingCost;
     
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {
        
     }
     
-
+    @Override
+    public int getCost(){
+        return cost;
+    }
     
+    @Override
     public String toString()
     {
         return "";
