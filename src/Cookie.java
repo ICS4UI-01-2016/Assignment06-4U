@@ -25,22 +25,21 @@ public class Cookie extends DessertItem {
         return number;
     }
     
-    public int pricePer12(){
-        return pricePer12;
-    }
+  
     
     
     @Override
     public String toString()
     {
-        String output = DessertShoppe.cents2dollarsAndCents(number);
-        return "The cost of cookies is " + output;
+        String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        return  super.getName() + " " + output;
     }
 
     @Override
     public int getCost() {
        //the integer which returns the cost of ONE Cookie, therefore divide number by 12 (e.g 24/12 = 2 dozens)
-        int cost = (this.number/12)*this.pricePer12;
+        int cost = ((this.number) * this.pricePer12)/12;
+      
         return cost;
     }
     

@@ -9,15 +9,30 @@
  * 
  * Remember, we can use IceCream to do some of the heavy lifting for us!
  * 
- * @author YOURNAMEHERE
+ * @author Khaled
  */
 public class Sundae extends IceCream{
     
+    private String toppingName;
+    private int toppingCost;
 
-    
+   
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {
+        //takes the super's class' name and cost 
+       super(icName,icCost);
        
+       this.toppingCost = toppingCost;
+       this.toppingName = toppingName;
+    }
+    
+    public int getToppingCost(){
+        return toppingCost;
+        
+    }
+    
+    public String toppingName(){
+        return toppingName;
     }
     
 
@@ -25,7 +40,16 @@ public class Sundae extends IceCream{
     @Override
     public String toString()
     {
-        return "";
+        
+         String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
+         return super.getName() + " " + output;
     }
+    
+    public int getCost(){
+        int cost = super.getCost() + this.toppingCost;
+        return cost;
+    }
+    
+   
     
 }

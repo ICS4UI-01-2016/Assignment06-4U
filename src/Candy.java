@@ -24,7 +24,9 @@ public class Candy extends DessertItem {
     @Override
     public String toString()
     {
-       return "";
+        
+        String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        return super.getName() + " " + output;
     }
     
     
@@ -35,11 +37,17 @@ public class Candy extends DessertItem {
     public double getWeight(){
         return this.weight;
     }
+    
+   
 
     @Override
     public int getCost() {
-        int cost = this.pricePerLbs * this.weight;
-        long rounding = Math.round(cost);
-        return 0;
+        //First let's convert the weight (double) into int to avoid any complications by returning it in speicifc way
+        
+       
+        
+       double cost = this.weight *this.pricePerLbs;
+       double rounded = Math.round(cost);
+        return (int) rounded;
     }
 }

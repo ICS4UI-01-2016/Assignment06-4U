@@ -69,6 +69,7 @@ public class Checkout {
         {
             output += desserts[i] + "\n";
             preCost += desserts[i].getCost();
+            
         }
         output += "\n";
         
