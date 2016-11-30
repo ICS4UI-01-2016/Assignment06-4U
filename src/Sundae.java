@@ -10,12 +10,41 @@
  *
  * @author @tatad6701
  */
-public class Sundae {
+public class Sundae extends IceCream {
 
+    // Create the instance varaibles
+    private String toppingName;
+    private int toppingCost;
+
+    /**
+     * Constructor for the the sundae
+     *
+     * @param icName the name of the ice cream being passed through
+     * @param icCost the cost of the ice cream being passed through
+     * @param toppingName the topping name being passed through
+     * @param toppingCost the topping cost being passed through
+     */
     public Sundae(String icName, int icCost, String toppingName, int toppingCost) {
-
+        super(icName, icCost);
+        this.toppingName = toppingName;
+        this.toppingCost = toppingCost;
     }
 
+    /**
+     * Method that gets the cost of the sundae with toppings included
+     *
+     * @return the cost of the ice cream (sundae) plus the cost of the toppings
+     */
+    public int getCost() {
+        return (super.getCost() + toppingCost);
+    }
+
+    /**
+     * Method that properly prints the text concerning sundae nicely
+     *
+     * @return
+     */
+    @Override
     public String toString() {
         return "";
     }

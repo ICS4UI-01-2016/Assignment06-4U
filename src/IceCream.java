@@ -23,10 +23,24 @@ public class IceCream extends DessertItem {
         this.cost = cost;
     }
 
+    /**
+     * Method that gets the cost of the ice cream
+     *
+     * @return the cost of the ice cream
+     */
+    @Override
     public int getCost() {
+        return cost;
     }
 
+    /**
+     * Method that properly prints the text concerning ice cream nicely
+     *
+     * @return output which contains the valuable
+     */
     public String toString() {
-        return "";
+        // Add more to this
+        String output = super.getName();
+        return output;
     }
 }
