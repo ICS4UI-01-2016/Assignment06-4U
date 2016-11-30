@@ -1,24 +1,21 @@
+
 /**
- * The Cookie class is a subclass of DessertItem. 
- * 
- * A Cookie has a name, the number of cookies purchased, and 
- * the price per dozen cookies. 
- * The number and price per dozen are used to calculate the cost of the cookies.
- * 
- * @author YOURNAMEHERE
+ * The Cookie class is a subclass of DessertItem.
+ *
+ * A Cookie has a name, the number of cookies purchased, and the price per dozen
+ * cookies. The number and price per dozen are used to calculate the cost of the
+ * cookies.
+ *
+ * @author @tatad6701
  */
 public class Cookie {
-    
-    
-    public Cookie(String name, int number, int pricePer12)
-    {
-        
+
+    public Cookie(String name, int number, int pricePer12) {
+
     }
 
-    
-    public String toString()
-    {
+    public String toString() {
         return "";
     }
-    
+
 }
