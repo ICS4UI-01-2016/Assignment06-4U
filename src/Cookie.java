@@ -7,18 +7,33 @@
  * 
  * @author YOURNAMEHERE
  */
-public class Cookie {
+public class Cookie extends DessertItem{
+    private int number;
+    private int pricePer12;
     
-    
-    public Cookie(String name, int number, int pricePer12)
-    {
+    public Cookie(String name, int number, int pricePer12){
+     super(name);
+     this.number = number;
+     this.pricePer12 = pricePer12;
         
     }
 
-    
+    @Override
     public String toString()
     {
-        return "";
+        //convert cents to dollars using cens2dollarsAndCents
+        String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
+     
+        return  "Chocolate Chip Cookies      " + output ;
+
+    }
+
+   
+    @Override
+    public int getCost() {
+        
+         int cost = (Math.round(this.number/12)*this.pricePer12);
+       return cost;
     }
     
 }
