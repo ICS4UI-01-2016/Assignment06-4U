@@ -15,11 +15,13 @@ public class IceCream extends DessertItem {
         this.cost = cost;
 
     }
-    
-    public int getCost(){
+
+    @Override
+    public int getCost() {
         return this.cost;
     }
 
+    @Override
     public String toString() {
         return "";
     }

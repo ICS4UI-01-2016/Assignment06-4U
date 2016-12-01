@@ -12,16 +12,23 @@
  * @author YOURNAMEHERE
  */
 public class Sundae{
+    private String icName;
+    private int icCost;
+    private String toppingName;
+    private int toppingCost;
     
-
-    
-    public Sundae(String icName, int icCost, String toppingName, int toppingCost)
-    {
-       
+    public Sundae(String icName, int icCost, String toppingName, int toppingCost) {
+       this.icName = icName;
+       this.icCost = icCost;
+       this.toppingName = toppingName;
+       this.toppingCost = toppingCost;
     }
     
+    
+    
 
     
+    @Override
     public String toString()
     {
         return "";
