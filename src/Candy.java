@@ -46,8 +46,10 @@ public class Candy extends DessertItem {
      */
     @Override
     public String toString() {
+        // Adding the correct amount of spaces
         String output = this.weight + " lbs. @ $" + this.pricePerlibs + " /lb." + "\n"
-                + super.getName() + "\t" + this.getCost();
+                + super.getName();
+        DessertShoppe.RECEIPT_WIDTH - 27;
         return output;
     }
 }

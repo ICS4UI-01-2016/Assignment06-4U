@@ -8,7 +8,8 @@
  *
  * Remember, we can use IceCream to do some of the heavy lifting for us!
  *
- * @author @tatad6701
+ * @author
+ * @tatad6701
  */
 public class Sundae extends IceCream {
 
@@ -46,7 +47,8 @@ public class Sundae extends IceCream {
      */
     @Override
     public String toString() {
-        return "";
+        String output = this.toppingName + " Sundae with" + "\n"
+                + super.getName() + this.getCost();
+        return output;
     }
-
 }

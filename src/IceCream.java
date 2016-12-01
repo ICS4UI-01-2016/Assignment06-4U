@@ -40,7 +40,10 @@ public class IceCream extends DessertItem {
      */
     public String toString() {
         // Add more to this
-        String output = super.getName();
+        String output = super.getName() + "\t " + this.cost;
+        // Finding the number of spaces
+        
+       // for(int i = 0; i < )
         return output;
     }
 }
