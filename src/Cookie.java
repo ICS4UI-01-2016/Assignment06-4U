@@ -31,8 +31,17 @@ public class Cookie extends DessertItem {
     @Override
     public String toString()
     {
+      
+        
+       
         String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        return  super.getName() + " " + output;
+        int numberOfSpaces = 30 - super.getName().length() - output.length();
+        for (int i = 0; i < numberOfSpaces; i++) {
+            output = " " + output;
+        }
+        return super.getName() + output;
+        
+        
     }
 
     @Override
