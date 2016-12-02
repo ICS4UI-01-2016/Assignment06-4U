@@ -39,7 +39,7 @@ public class Cookie extends DessertItem {
         for (int i = 0; i < numberOfSpaces; i++) {
             output = " " + output;
         }
-        return super.getName() + output;
+        return this.number + " @ $" + this.pricePer12*0.01 + " /dz \n" + super.getName() + output;
         
         
     }

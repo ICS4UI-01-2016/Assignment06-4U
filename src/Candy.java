@@ -24,8 +24,6 @@ public class Candy extends DessertItem {
     @Override
     public String toString()
     {
-        
-        System.out.println(this.weight + "@" + this.pricePerLbs + " /lb");
 
         String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
          int numberOfSpaces = 30 - super.getName().length() - output.length();
@@ -33,7 +31,8 @@ public class Candy extends DessertItem {
         for (int i = 0; i < numberOfSpaces; i++) {
             output = " " + output;
         }
-        return super.getName() + output;
+       
+        return this.weight + " lbs. @ $" + this.pricePerLbs*0.01 + " /lb \n" + super.getName() + output;
         
         
     }

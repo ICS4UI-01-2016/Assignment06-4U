@@ -40,16 +40,13 @@ public class Sundae extends IceCream{
     @Override
     public String toString()
     {
-        
-     
-        
-       
+
         String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
         int numberOfSpaces = 30 - super.getName().length() - output.length();
         for (int i = 0; i < numberOfSpaces; i++) {
             output = " " + output;
         }
-        return super.getName() + output;
+        return super.getName() + "\n" + this.toppingName + output;
         
         
     }
