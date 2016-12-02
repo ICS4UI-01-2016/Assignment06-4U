@@ -11,16 +11,12 @@
 public abstract class DessertItem {
 
     private String name;
-    private int number;
-    private int cost;
-
+    
     /**
      * Null constructor for DessertItem class
      */
     public DessertItem() {
-        this.name = name;
-        this.number = number;
-        this.cost = cost;
+        this("");
     }
 
     /**
@@ -37,16 +33,8 @@ public abstract class DessertItem {
      *
      * @return name of DessertItem
      */
-    public final String getName() {                       // what does this do?
-        return this.name;
-    }
-
-    /**
-     * Returns number of items
-     * @return number of items
-     */
-    public int getNumber(){
-        return this.number;
+    public final String getName() {
+        return name;
     }
     
     /**

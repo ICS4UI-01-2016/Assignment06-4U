@@ -64,8 +64,7 @@ public class Checkout {
         
         // list all the desserts ordered
         int preCost = 0;
-        for(int i=0; i < numItems; i++)
-        {
+        for (int i=0; i < numItems; i++) {
             output += desserts[i] + "\n";
             preCost += desserts[i].getCost();
         }

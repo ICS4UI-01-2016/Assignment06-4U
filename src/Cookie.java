@@ -6,26 +6,38 @@
  * cookies. The number and price per dozen are used to calculate the cost of the
  * cookies.
  *
- * @author YOURNAMEHERE
+ * @author laurelizall
  */
 public class Cookie extends DessertItem {
 
+    private int cost;
+    private int number;
+    private int pricePer12;
+
     public Cookie(String name, int number, int pricePer12) {
         // call to dessertitem constructor
-        super(name, number, pricePer12);
+        super(name);
+        this.cost = pricePer12;
     }
 
     @Override
     public String toString() {
-        String output = this.getNumber() + " @ $" + pricePer12 + "/dz.";
-        output = this.getName() + TAB + this.getCost();                         // how to do a tab
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        String output = this.number + " @ $" + pricePer12 + "/dz.";
+        int outputLength = output.length();
+        int remainingSpace = width - outputLength;
+        output = this.getName();
+        // insert enough spaces to make the layout equal
+        for (int i = 0; i < remainingSpace; i++){
+            System.out.print(" ");
+        }
+        output = this.getCost() + "";                      // how to do a tab
         return output;
     }
 
     @Override
-    public void cost() {
-        int perOne = pricePer12/12;
-        return perOne * this.getNumber();
-        }
+    public int getCost() {
+        int perOne = pricePer12 / 12;
+        return perOne * this.number;
     }
 }
