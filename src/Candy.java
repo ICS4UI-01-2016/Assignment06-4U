@@ -23,7 +23,8 @@ public class Candy extends DessertItem{
     @Override
     public String toString()
     {
-       //convert cents to dollars using cens2dollarsAndCents
+       
+       //convert cents to dollars using cents2dollarsAndCents
         String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
         //create string storing cost in a string 
         String costLength = Integer.toString(this.getCost());
@@ -34,8 +35,8 @@ public class Candy extends DessertItem{
      for(int i = 0; i < spacing ; i ++){
          output = " " +output ;
      }
-     //return name of cookie along with cost
-        return  this.getName() + output ;
+     //return name of cookie along with cost along with the right format posting amount of pounds with cost per pound
+        return this.weight +" lbs. " + "@ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerLbs) +" /lb.\n" + this.getName() + output ;
     }
 
     

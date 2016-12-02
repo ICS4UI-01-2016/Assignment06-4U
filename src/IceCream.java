@@ -37,7 +37,7 @@ private int cost;
 
     @Override
     public int getCost() {
-        return this.cost;
+        return Math.round(this.cost);
     }
     
 }
