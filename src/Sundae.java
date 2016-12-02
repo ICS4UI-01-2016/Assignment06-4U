@@ -10,11 +10,25 @@
  *
  * @author YOURNAMEHERE
  */
+/**
+ * class extends to ice cream
+ *
+ * @author munta
+ */
 public class Sundae extends IceCream {
+//instance variables
 
     private String toppingName;
     public int toppingCost;
 
+    /**
+     * pass through the name,cost ,topping name,and topping cost
+     *
+     * @param icName the name of the ice cream
+     * @param icCost the cost of the ice cream
+     * @param toppingName the name of the topping for the ice cream
+     * @param toppingCost the cost of the topping for the ice cream
+     */
     public Sundae(String icName, int icCost, String toppingName, int toppingCost) {
 
         super(icName, icCost);
@@ -26,25 +40,30 @@ public class Sundae extends IceCream {
     }
 
     public String toString() {
-
+        //set first line 
         String output = this.toppingName + " Sundae " + "with\n";
-        //store length of cost 
+        //covert the cost to dollars 
         String lengthCost = DessertShoppe.cents2dollarsAndCents(this.getCost());
         //calculate how many spaces are needed
-        int width = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - lengthCost.length()-1;
+        int width = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - lengthCost.length() - 1;
         //add the name
         output += super.getName();
         //add the required amount of spaces 
         for (int i = 0; i <= width; i++) {
             output += " ";
         }
-        //add the cost
+        //add the cost to the 2nd line
         output += DessertShoppe.cents2dollarsAndCents(this.getCost());
-        //rerturn
+        //return
         return output;
 
     }
 
+    /**
+     * return calculate cost of the ice cream with the topping cost included
+     *
+     * @return the cost of the ice cream including the topping cost
+     */
     public int getCost() {
         return super.getCost() + toppingCost;
     }
