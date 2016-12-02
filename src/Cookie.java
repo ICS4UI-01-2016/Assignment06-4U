@@ -22,17 +22,18 @@ public class Cookie extends DessertItem{
     
     public String toString()
     {
-        String output=this.number+ " @ " + this.pricePer12+"\n"+
-                super.getName();
         //store length of cost 
         String lengthCost=DessertShoppe.cents2dollarsAndCents(this.getCost());
         //calculate how many spaces are needed
-        int s= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
-              
-        for(int i=0;i<=s;i++){
-            output=output+ "";
+        int width= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
+        
+        String output=this.number+ " @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePer12)+"/dz\n"+
+                super.getName();
+       
+        for(int i=0;i<=width;i++){
+            output+="";
         }
-        System.out.println(lengthCost);
+       output+=DessertShoppe.cents2dollarsAndCents(this.getCost());
        
         return output;
         

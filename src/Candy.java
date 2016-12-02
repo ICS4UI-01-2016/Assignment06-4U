@@ -21,20 +21,24 @@ public class Candy extends DessertItem {
 
     @Override
     public String toString() {
-        System.out.println("printing candy");
-        String output = this.weight + " @ " + this.pricePerLbs + "\n"
-                +super.getName();
-        //create a string to store the length of the cost 
+         //store length of cost 
         String lengthCost=DessertShoppe.cents2dollarsAndCents(this.getCost());
-        //calculate how many sapces are needed
-      int s= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
-              
-        for(int i=0;i<=s;i++){
-            output=output+ "";
+        //calculate how many spaces are needed
+        int width= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
+        //al information is set before the price is added
+        String output=this.weight+ " lbs " +"@ $"+ DessertShoppe.cents2dollarsAndCents(this.pricePerLbs)+"/dz\n"+
+                super.getName();
+       //add the required amount of spaces
+        for(int i=0;i<=width;i++){
+            output+="";
         }
-        System.out.println(lengthCost);
-       
+        //add the price to the end of the line 
+       output+=DessertShoppe.cents2dollarsAndCents(this.getCost());
+       //return 
         return output;
+        
+        
+        
     }
 
     public int getCost() {

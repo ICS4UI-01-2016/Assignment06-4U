@@ -15,7 +15,7 @@ public class Sundae extends IceCream{
     
    
     private String toppingName;
-    private int toppingCost;
+   public int toppingCost;
     
     
 
@@ -36,8 +36,21 @@ public class Sundae extends IceCream{
     
     public String toString()
     {
-        String output=this.toppingName;
+        //store length of cost 
+        String lengthCost=DessertShoppe.cents2dollarsAndCents(this.getCost());
+        //calculate how many spaces are needed
+        int width= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
+        
+        String output=super.getName();
+       //add the required amount of spaces 
+        for(int i=0;i<=width;i++){
+            output+="";
+        }
+        //add the cost
+       output+=DessertShoppe.cents2dollarsAndCents(this.getCost());
+       //rerturn
         return output;
+        
     }
     
     
