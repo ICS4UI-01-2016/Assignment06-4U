@@ -29,10 +29,33 @@ public class Cookie extends DessertItem{
     }
 
     public String toString() {
-        String output = "Dog-> Name: " + this.getName() 
-               + "  Age: " + this.getName();
-               
-       return output;
+        // covert price per 12 to dollars
+        double pricePer12 = (this.pricePer12/100.00);
+        // output number and cost per 12
+        String output = number + " @ $" + pricePer12 + " /dz" + "\n";
+        // convert cost to dollars
+        double cost = ((getCost())/100.00);
+  
+        // create output and add the name
+        output += this.getName(); 
+        // determine the number of spaces the name takes up
+        int nLength = (super.getName()).length();
+        // make the cost into a string
+        String cost2 = Double.toString(cost);
+        // determine the number of spaces the price takes up
+        int pLength = cost2.length();
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        
+        // determine the space needed between the name and cost
+        int space = width - (nLength + pLength);
+        
+        for (int i = 0; i < space; i++) {
+            // add the spaces to the output
+            output += " ";
+        }
+        // add the cost to the output
+        output += cost2;
+        return output;
     }
     
     /**
