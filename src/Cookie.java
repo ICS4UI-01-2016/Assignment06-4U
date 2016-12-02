@@ -34,7 +34,7 @@ public class Cookie extends DessertItem {
      */
     public int getCost() {
         // (number / 12) * pricePerLbs (One cookie is 0.33 = 33 cents)
-        int price = (int) (Math.round(this.number / 12) * this.pricePer12);
+        int price = (int) Math.round((this.number / 12.0) * this.pricePer12);
         return price;
     }
 
@@ -45,8 +45,18 @@ public class Cookie extends DessertItem {
      * properly
      */
     public String toString() {
-        String output = this.number + " @ " + this.pricePer12 + " /dz" + "\n"
-                + super.getName() + "\t" + this.getCost();
+        // Getting the length of the cost (Which is also used to subtract the receipt length
+        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Calculating the space that is leftover 
+        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
+        // Printing out the info for the receipt
+        String output = this.number + " @ " + DessertShoppe.cents2dollarsAndCents(this.pricePer12) + " /dz" + "\n"
+                + super.getName();
+        // Properly printing out the info for the receipt
+        for (int i = 0; i < widthLeft; i++) {
+            output = output + " ";
+        }
+        output = output + changedToDollars;
         return output;
     }
 }

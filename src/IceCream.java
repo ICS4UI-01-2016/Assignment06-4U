@@ -39,11 +39,16 @@ public class IceCream extends DessertItem {
      * @return output which contains the valuable
      */
     public String toString() {
-        // Add more to this
-        String output = super.getName() + "\t " + this.cost;
-        // Finding the number of spaces
-        
-       // for(int i = 0; i < )
+        // Getting the length of the cost
+        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Adding the correct amount of spaces
+        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
+        String output = super.getName();
+        // Porperly printing the spaces
+        for (int i = 0; i < widthLeft; i++) {
+            output = output + " ";
+        }
+        output = output + changedToDollars;
         return output;
     }
 }
