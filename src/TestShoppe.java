@@ -37,7 +37,7 @@ public class TestShoppe {
         checkout.enterItem(new Candy("Gummy Worms", 1.33, 89));
         checkout.enterItem(new Cookie("Chocolate Chip Cookies", 4, 399));
         checkout.enterItem(new Candy("Salt Water Taffy", 1.5, 209));
-       checkout.enterItem(new Candy("Candy Corn", 3.0, 109));
+        checkout.enterItem(new Candy("Candy Corn", 3.0, 109));
 
         // prints out the receipt
         System.out.println(checkout);

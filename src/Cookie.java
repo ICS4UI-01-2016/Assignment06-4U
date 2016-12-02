@@ -29,9 +29,9 @@ public class Cookie extends DessertItem{
         
         String output=this.number+ " @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePer12)+"/dz\n"+
                 super.getName();
-       
+       //add the required amount of spaces 
         for(int i=0;i<=width;i++){
-            output+="";
+            output+=" ";
         }
        output+=DessertShoppe.cents2dollarsAndCents(this.getCost());
        

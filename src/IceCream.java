@@ -19,12 +19,12 @@ public class IceCream extends DessertItem {
         //store length of cost 
         String lengthCost = DessertShoppe.cents2dollarsAndCents(this.getCost());
         //calculate how many spaces are needed
-        int width = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - lengthCost.length();
+        int width = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - lengthCost.length()-1;
         //set the name
         String output = super.getName();
         //add the required amount of spaces
         for (int i = 0; i <= width; i++) {
-            output += "";
+            output += " ";
         }
         //add the price 
         output += DessertShoppe.cents2dollarsAndCents(this.getCost());

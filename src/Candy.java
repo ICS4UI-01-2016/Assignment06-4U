@@ -26,11 +26,11 @@ public class Candy extends DessertItem {
         //calculate how many spaces are needed
         int width= DessertShoppe.RECEIPT_WIDTH-super.getName().length()-lengthCost.length();
         //al information is set before the price is added
-        String output=this.weight+ " lbs " +"@ $"+ DessertShoppe.cents2dollarsAndCents(this.pricePerLbs)+"/dz\n"+
+        String output=this.weight+ " lbs " +"@ $"+ DessertShoppe.cents2dollarsAndCents(this.pricePerLbs)+"/lb\n"+
                 super.getName();
        //add the required amount of spaces
-        for(int i=0;i<=width;i++){
-            output+="";
+        for(int i=0;i<width;i++){
+            output+=" ";
         }
         //add the price to the end of the line 
        output+=DessertShoppe.cents2dollarsAndCents(this.getCost());
