@@ -25,6 +25,13 @@ public class Candy extends DessertItem {
 
     @Override
     public String toString() {
-        return "";
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        String cost = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        int rSpaces = width - super.getName().length();
+        
+        String output = this.weight + " @ $" + DessertShoppe.cents2dollarsAndCents(pricePerLbs) + " /lb. \n" + super.getName();
+        
+        output += String.format("%" + rSpaces + "s%n", cost);
+        return output;
     }
 }

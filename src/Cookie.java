@@ -21,12 +21,20 @@ public class Cookie extends DessertItem {
 
     @Override
     public int getCost() {
-        return (number / 12) * pricePer12;
+        int price = (int) Math.round((number / 12.0) * pricePer12);
+        return price;
     }
 
     @Override
     public String toString() {
-        return "";
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        String cost = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        int rSpaces = width - super.getName().length();
+        
+        String output = this.number + " @ $" + DessertShoppe.cents2dollarsAndCents(pricePer12) + " /dz \n" + super.getName();
+        
+        output += String.format("%" + rSpaces + "s%n", cost);
+        return output;
     }
 
 }

@@ -23,6 +23,13 @@ public class IceCream extends DessertItem {
 
     @Override
     public String toString() {
-        return "";
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        String cost = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        int rSpaces = width - super.getName().length();
+
+        String output = super.getName();
+
+        output += String.format("%" + rSpaces + "s%n", cost);
+        return output;
     }
 }
