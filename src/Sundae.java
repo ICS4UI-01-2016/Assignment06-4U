@@ -34,8 +34,7 @@ public class Sundae extends IceCream {
         super(icName, icCost);
         this.toppingName = toppingName;
         this.toppingCost = toppingCost;
-        this.toppingName = toppingName;
-        this.toppingCost = toppingCost;
+       
 
     }
 
