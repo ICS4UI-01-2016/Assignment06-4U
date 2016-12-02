@@ -10,6 +10,8 @@
 public class Candy extends DessertItem {
 
     private int cost;
+    private double weight;
+    private int pricePerLbs;
 
     public Candy(String name, double weight, int pricePerLbs) {
         super(name);
@@ -20,7 +22,19 @@ public class Candy extends DessertItem {
         return this.cost;
     }
 
+    @Override
     public String toString() {
-        return "";
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        String output = this.weight + " lbs. @" + this.pricePerLbs + " /lbs";
+        output += this.getName();
+        int outputLength = output.length();
+        int space = width - outputLength;
+
+        for (int i = 0; i < space; i++) {
+            System.out.print(" ");
+        }
+        
+        output += this.getCost() + "";
+        return output;
     }
 }
