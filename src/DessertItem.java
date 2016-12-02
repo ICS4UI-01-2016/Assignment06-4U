@@ -11,6 +11,8 @@
 public abstract class DessertItem {
   
   private String name;
+  private int weight;
+ private int cost;
   
 /**
  * Null constructor for DessertItem class

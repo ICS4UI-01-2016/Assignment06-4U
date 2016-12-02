@@ -5,17 +5,25 @@
  * 
  * @author YOURNAMEHERE
  */
-public class IceCream {
+public class IceCream extends DessertItem {
+    private int cost;
 
     public IceCream(String name, int cost)
     {
-        
+        super(name);
+        this.cost=cost;
     }
 
   
     public String toString()
     {
+        String output=Sundae.class.toString()+super.getName();
      return "";
     }
+    
+    public int getCost(){
+        return cost;
+    }
+    
     
 }
