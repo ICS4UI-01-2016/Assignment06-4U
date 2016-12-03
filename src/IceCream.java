@@ -39,16 +39,19 @@ public class IceCream extends DessertItem {
      * @return output which contains the valuable
      */
     public String toString() {
-        // Getting the length of the cost
+        // Changing the cost from cents to dollars
         String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Adding the correct amount of spaces
+        // Calculating the space that is leftover 
         int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
+        // Printing out the information for the receipt
         String output = super.getName();
-        // Porperly printing the spaces
+        // Properly printing out the output (info for the receipt) and the spaces
         for (int i = 0; i < widthLeft; i++) {
             output = output + " ";
         }
+        // Printing out the output, the spaces, and the cost of the specific ice cream
         output = output + changedToDollars;
+        // Return the output
         return output;
     }
 }

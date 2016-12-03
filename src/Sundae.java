@@ -47,17 +47,20 @@ public class Sundae extends IceCream {
      */
     @Override
     public String toString() {
-        // Getting the length of the cost
-        String lengthCost = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Adding the correct amount of spaces
-        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - lengthCost.length();
+        // Changing the cost from cents to dollars
+        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Calculating the amount of space that is left by subtracting the name and cost's length
+        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
         // Printing out the text that is needed for the receipt
-        String output = this.toppingName + " Sundae with" + "\n"
-                + super.getName() + this.getCost();
-        // Porperly printing the spaces
+        String output = this.toppingName + " Sundae with \n"
+                + super.getName();
+        // Properly printing out the output (info for the receipt) and the spaces
         for (int i = 0; i < widthLeft; i++) {
             output = output + " ";
         }
+        // Printing out the information for the receipt, the spaces, and the cost of the specific sundae
+        output = output + changedToDollars;
+        // Return the ouput
         return output;
     }
 }

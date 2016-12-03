@@ -46,18 +46,20 @@ public class Candy extends DessertItem {
      */
     @Override
     public String toString() {
-        // Getting the length of the cost (Which is also used to subtract the receipt length
+        // Changing the cost from cents to dollars 
         String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the amount of space that is left
+        // Calculating the amount of space that is left by subtracting the name and cost's length
         int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
-        // Printing out the info for the receipt
-        String output = this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerlibs) + " /lb." + "\n"
+        // Printing out the information for the receipt
+        String output = this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerlibs) + " /lb. \n"
                 + super.getName();
-        // Porperly printing the spaces
+        // Properly printing out the output (info for the receipt) and the spaces
         for (int i = 0; i < widthLeft; i++) {
             output = output + " ";
         }
+        // Printing out the output, the spaces, and the cost of the specific candy
         output = output + changedToDollars;
+        // Return the ouput
         return output;
     }
 }
