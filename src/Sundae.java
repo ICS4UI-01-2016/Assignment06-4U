@@ -26,7 +26,7 @@ public class Sundae extends IceCream{
     */
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {
-        //takes the super's class' name and cost of the ice cream
+        //takes the super's class' name (which in this case it's the ice cream) and cost of the ice cream
        super(icName,icCost);
        
        //initializes both the topping cost and topping name 
