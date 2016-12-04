@@ -5,26 +5,27 @@
  * A Candy has a name, a weight (in pounds), and a price per pound. The weight
  * and price per pound are used to calculate the cost of the Candy.
  *
- * @author
- * @tatad6701
+ * @author tatad6701
+ *
  */
 public class Candy extends DessertItem {
 
     // Create instance variables to be used
     private double weight;
-    private int pricePerlibs;
+    private int pricePerLbs;
 
     /**
-     * Constructor for the Candy
+     * Constructor for the Candy! :)
      *
      * @param name the name of the candy being passed through
      * @param weight the weight of the candy being passed through
      * @param pricePerLbs the price per pounds of the candy being passed through
      */
     public Candy(String name, double weight, int pricePerLbs) {
+        // Initializing the instance variables
         super(name);
         this.weight = weight;
-        this.pricePerlibs = pricePerLbs;
+        this.pricePerLbs = pricePerLbs;
     }
 
     /**
@@ -34,31 +35,31 @@ public class Candy extends DessertItem {
      */
     @Override
     public int getCost() {
-        int price = (int) (Math.round(this.weight * this.pricePerlibs));
+        // Getting the price of the candy(s) (multiplying the weight and the pricePerLbs)
+        int price = (int) (Math.round(this.weight * this.pricePerLbs));
+        // Return the price of the candy(s)
         return price;
     }
 
     /**
-     * Method that prints out the text nicely!
+     * Method that prints out the text nicely on the receipt!
      *
-     * @return the output string which holds the text that is formatting
-     * properly
+     * @return the output string which holds the text/information that is being
+     * formatted properly
      */
     @Override
     public String toString() {
-        // Changing the cost from cents to dollars 
+        // Create a empty string 
+        String output = "";
+        // Changing the cost from cents to dollars
         String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the amount of space that is left by subtracting the name and cost's length
-        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
-        // Printing out the information for the receipt
-        String output = this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerlibs) + " /lb. \n"
-                + super.getName();
-        // Properly printing out the output (info for the receipt) and the spaces
-        for (int i = 0; i < widthLeft; i++) {
-            output = output + " ";
-        }
-        // Printing out the output, the spaces, and the cost of the specific candy
-        output = output + changedToDollars;
+        // Calculating the space that is leftover within the receipt
+        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length();
+        // Printing the information on the receipt and formating the text properly for the receipt
+        output += this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerLbs) + " /lb." + "\n" + super.getName();
+        // "%" = indicates the formatting of the receipt && "s" = indicates the amount of spaces (note to myself)
+        output += String.format("%" + (widthLeft) + "s", changedToDollars);
+
         // Return the ouput
         return output;
     }

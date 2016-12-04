@@ -8,8 +8,8 @@
  *
  * Remember, we can use IceCream to do some of the heavy lifting for us!
  *
- * @author
- * @tatad6701
+ * @author tatad6701
+ *
  */
 public class Sundae extends IceCream {
 
@@ -26,6 +26,7 @@ public class Sundae extends IceCream {
      * @param toppingCost the topping cost being passed through
      */
     public Sundae(String icName, int icCost, String toppingName, int toppingCost) {
+        // Initializing the instance variables
         super(icName, icCost);
         this.toppingName = toppingName;
         this.toppingCost = toppingCost;
@@ -37,29 +38,29 @@ public class Sundae extends IceCream {
      * @return the cost of the ice cream (sundae) plus the cost of the toppings
      */
     public int getCost() {
+        // return the cost of the ice cream (sundae) plus the cost of the toppings
         return (super.getCost() + toppingCost);
     }
 
     /**
-     * Method that properly prints the text concerning sundae nicely
+     * Method that properly and nicely prints the text concerning the sundae
      *
-     * @return
+     * @return the output string which holds the text that is being formatted
+     * properly
      */
     @Override
     public String toString() {
+        // Create a empty string 
+        String output = "";
         // Changing the cost from cents to dollars
         String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the amount of space that is left by subtracting the name and cost's length
-        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length() - changedToDollars.length();
-        // Printing out the text that is needed for the receipt
-        String output = this.toppingName + " Sundae with \n"
-                + super.getName();
-        // Properly printing out the output (info for the receipt) and the spaces
-        for (int i = 0; i < widthLeft; i++) {
-            output = output + " ";
-        }
-        // Printing out the information for the receipt, the spaces, and the cost of the specific sundae
-        output = output + changedToDollars;
+        // Calculating the space that is leftover 
+        int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length();
+        // Printing the information on the receipt and formating the text properly for the receipt
+        output += this.toppingName + " Sundae with" + "\n" + super.getName();
+        // "%" = indicates the formatting of the receipt && "s" = indicates the amount of spaces (note to myself)
+        output += String.format("%" + (widthLeft) + "s", changedToDollars);
+
         // Return the ouput
         return output;
     }
