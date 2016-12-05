@@ -40,7 +40,6 @@ public abstract class DessertItem {
  * @return cost of DessertItem
  */  
   public abstract int getCost();
-
 }
    
   
