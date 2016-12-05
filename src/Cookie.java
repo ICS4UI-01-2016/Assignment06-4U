@@ -61,6 +61,6 @@ public class Cookie extends DessertItem {
      * @return the cost of the cookies.
      */
     public int getCost() {
-        return (int) Math.round(number * pricePer12);
+        return (int) Math.round( pricePer12*number/12);
     }
 }
