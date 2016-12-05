@@ -10,21 +10,39 @@
  *
  * @author YOURNAMEHERE
  */
-public class Sundae extends DessertItem {
+public class Sundae extends IceCream {
 
-    private int cost;
+    private int icCost;
+    private String icName;
+    private String toppingName;
+    private int toppingCost;
 
     public Sundae(String icName, int icCost, String toppingName, int toppingCost) {
-        super(icName);
-        
-        this.cost = icCost;
+        super(icName, icCost);
+        this.toppingName = toppingName;
+        this.toppingCost = toppingCost;
     }
 
     public int getCost() {
-        return this.cost;
+        return this.icCost;
     }
 
     public String toString() {
-        return "";
+        String output = this.toppingName + " Sundae with \n" + this.getName();
+
+
+        //spaces available
+        int width = DessertShoppe.RECEIPT_WIDTH;
+        int outputLength = this.getName().length();
+        //finding length of output
+        int costLength = DessertShoppe.cents2dollarsAndCents(this.getCost()).length();
+        outputLength = outputLength + costLength;
+        //find the remaining space between total space and used up space from strings
+        int space = width - outputLength;
+        for (int i = 0; i < space; i++) {
+            output = output + " ";
+        }
+        output = output + (DessertShoppe.cents2dollarsAndCents(this.getCost()) + this.toppingCost);
+        return output;
     }
 }
