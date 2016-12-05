@@ -14,15 +14,15 @@
 public class Sundae extends IceCream{
     
 private String toppingName;
-private int toppingCost;
+
     
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {
         //store name of icing and cost in super
-       super(icName, icCost);
+       super(icName, icCost + toppingCost);
        //initialize rest of variables
-       toppingName = this.toppingName;
-       toppingCost = this.toppingCost;
+       this.toppingName = toppingName;
+  
        
     }
     
@@ -32,7 +32,7 @@ private int toppingCost;
     public String toString()
     {
         //convert cents to dollars using cens2dollarsAndCents
-        String output = DessertShoppe.cents2dollarsAndCents(super.getCost() + this.toppingCost);
+        String output = DessertShoppe.cents2dollarsAndCents(super.getCost());
      
         //create string storing cost in a string 
         String costLength = Integer.toString(super.getCost() + this.getCost());
@@ -48,9 +48,6 @@ private int toppingCost;
      //return name of cookie along with cost
         return  this.getName() + output ;
     }
-public int getCost(){
-    int cost = super.getCost() + this.toppingCost;
-    return cost;
-}
+
     
 }

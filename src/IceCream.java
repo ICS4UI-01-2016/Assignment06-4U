@@ -13,7 +13,7 @@ private int cost;
     {
         //store name of candy in the super class
         super(name);
-        cost = this.cost;
+        this.cost = cost;
     }
 
   
