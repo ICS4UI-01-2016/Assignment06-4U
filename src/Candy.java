@@ -32,7 +32,7 @@ public class Candy extends DessertItem {
     @Override
     public int getCost() {
         //return the weight multipled by the price per pound as an int
-        return (int) (weight * pricePerLbs);
+        return (int) Math.round(weight * pricePerLbs);
     }
     
     /**

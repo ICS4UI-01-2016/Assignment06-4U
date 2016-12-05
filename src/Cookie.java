@@ -30,7 +30,6 @@ public class Cookie extends DessertItem {
 
     /**
      * accessor method to get the cost of the cookies
-     *
      * @return return the cost
      */
     @Override
