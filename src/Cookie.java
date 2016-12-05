@@ -42,7 +42,7 @@ public class Cookie extends DessertItem {
     }
 
     /**
-     * Method that prints out the text nicely
+     * Method that prints out the text nicely and properly
      *
      * @return the output string which holds the text that is being formatted
      * properly
@@ -51,13 +51,13 @@ public class Cookie extends DessertItem {
         // Create a empty string 
         String output = "";
         // Changing the cost from cents to dollars
-        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the space that is leftover 
+        String costToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Calculating the space that is leftover for the cost within the receipt
         int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length();
         // Printing the information on the receipt and formating the text properly for the receipt
         output += this.number + " @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePer12) + " /dz" + "\n" + super.getName();
         // "%" = indicates the formatting of the receipt && "s" = indicates the amount of spaces (note to myself)
-        output += String.format("%" + (widthLeft) + "s", changedToDollars);
+        output += String.format("%" + (widthLeft) + "s", costToDollars);
 
         // Return the output
         return output;

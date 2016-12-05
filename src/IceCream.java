@@ -19,7 +19,7 @@ public class IceCream extends DessertItem {
      * @param cost of the ice cream
      */
     public IceCream(String name, int cost) {
-        // Iniializing the instance variable
+        // Initializing the instance variable
         super(name);
         this.cost = cost;
     }
@@ -45,13 +45,13 @@ public class IceCream extends DessertItem {
         // Create a empty string 
         String output = "";
         // Changing the cost from cents to dollars
-        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the space that is leftover 
+        String costToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Calculating the space that is leftover for the cost within the receipt
         int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length();
         // Printing the information on the receipt and formating the text properly for the receipt 
         output += super.getName();
         // "%" = indicates the formatting of the receipt && "s" = indicates the amount of spaces (note to myself)
-        output += String.format("%" + (widthLeft) + "s", changedToDollars);
+        output += String.format("%" + (widthLeft) + "s", costToDollars);
 
         // Return the output
         return output;

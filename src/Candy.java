@@ -52,13 +52,13 @@ public class Candy extends DessertItem {
         // Create a empty string 
         String output = "";
         // Changing the cost from cents to dollars
-        String changedToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        // Calculating the space that is leftover within the receipt
+        String costToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // Calculating the space that is leftover for the cost within the receipt
         int widthLeft = DessertShoppe.RECEIPT_WIDTH - super.getName().length();
         // Printing the information on the receipt and formating the text properly for the receipt
         output += this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerLbs) + " /lb." + "\n" + super.getName();
         // "%" = indicates the formatting of the receipt && "s" = indicates the amount of spaces (note to myself)
-        output += String.format("%" + (widthLeft) + "s", changedToDollars);
+        output += String.format("%" + (widthLeft) + "s", costToDollars);
 
         // Return the ouput
         return output;
