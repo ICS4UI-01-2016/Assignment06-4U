@@ -17,27 +17,36 @@ public class Cookie extends DessertItem {
     public Cookie(String name, int number, int pricePer12) {
         // call to dessertitem constructor
         super(name);
-        this.cost = pricePer12;
+        this.number = number;
+        this.pricePer12 = pricePer12;
     }
 
     @Override
     public String toString() {
+        String output = this.number + " @ $" + DessertShoppe.cents2dollarsAndCents(pricePer12) + " /dz." + "\n";
+        output = output + this.getName();
+        
+        // how many spaces?
         int width = DessertShoppe.RECEIPT_WIDTH;
-        String output = this.number + " @ $" + pricePer12 + "/dz.";
-        int outputLength = output.length();
+        int outputLength = this.getName().length();
+        
+        // add costLength to the outputLength
+        int costLength = DessertShoppe.cents2dollarsAndCents(this.getCost()).length();
+        outputLength = outputLength + costLength;
         int remainingSpace = width - outputLength;
-        output = this.getName();
+        
         // insert enough spaces to make the layout equal
-        for (int i = 0; i < remainingSpace; i++){
-            System.out.print(" ");
+        for (int i = 0; i < remainingSpace; i++) {
+            output = output + " ";
         }
-        output = this.getCost() + "";                      // how to do a tab
+        // save string length
+        output = output + DessertShoppe.cents2dollarsAndCents(this.getCost());
         return output;
     }
 
     @Override
     public int getCost() {
-        int perOne = pricePer12 / 12;
-        return perOne * this.number;
+        int price = (int) Math.round(this.number / 12.0 * this.pricePer12);
+        return price;
     }
 }
