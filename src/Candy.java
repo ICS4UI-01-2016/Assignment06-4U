@@ -49,7 +49,7 @@ public class Candy extends DessertItem {
         //the remaining spaces after subtracting the length of the name of the candy
         int rSpaces = width - super.getName().length();
         //creating an output string with the same format as the example recipt
-        String output = this.weight + " @ $" + DessertShoppe.cents2dollarsAndCents(pricePerLbs) + " /lb. \n" + super.getName();
+        String output = this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(pricePerLbs) + " /lb. \n" + super.getName();
         //format the space between the calculated price with the spaces and add it to the output string
         output += String.format("%" + rSpaces + "s%n", cost);
         //return output
