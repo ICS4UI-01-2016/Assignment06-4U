@@ -24,13 +24,11 @@ public class Sundae extends IceCream {
     }
 
     public int getCost() {
-        return this.icCost;
+        return (super.getCost() + toppingCost);
     }
 
     public String toString() {
         String output = this.toppingName + " Sundae with \n" + this.getName();
-
-
         //spaces available
         int width = DessertShoppe.RECEIPT_WIDTH;
         int outputLength = this.getName().length();
