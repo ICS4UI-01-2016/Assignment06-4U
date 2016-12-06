@@ -58,8 +58,7 @@ public class Candy extends DessertItem{
     //spacing between the name and the price (making the prices parallel)
     public String findLength(){
         int n = this.getName().length();
-        int t = String.valueOf(this.getCost() * 0.01).length();
-        int numSpace = n - t; 
+        int t = String.valueOf(this.getCost() * 0.01).length(); 
         int w = n + t;
         String space = "";
         

@@ -10,6 +10,7 @@
 public class Cookie extends DessertItem{
     private int number;
     private int pricePer12;
+    
     public Cookie(String name, int number, int pricePer12)
     {
         // a call to the DessertItem constructor

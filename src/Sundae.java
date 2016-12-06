@@ -58,7 +58,6 @@ public class Sundae extends IceCream{
         public String findLength(){
         int n = this.getName().length();
         int t = String.valueOf(this.getCost() * 0.01).length();
-        int numSpace = n - t; 
         int w = n + t;
         String space = "";
         
