@@ -66,7 +66,7 @@ public class Checkout {
         int preCost = 0;
         for(int i=0; i < numItems; i++)
         {
-            output += desserts[i] + "\n";
+            output += desserts[i] ;
             preCost += desserts[i].getCost();
         }
         output += "\n";
