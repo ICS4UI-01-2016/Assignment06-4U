@@ -40,7 +40,7 @@ public class Sundae extends IceCream {
         for (int i = 0; i < space; i++) {
             output = output + " ";
         }
-        output = output + (DessertShoppe.cents2dollarsAndCents(this.getCost()) + this.toppingCost);
+        output = output + (DessertShoppe.cents2dollarsAndCents(this.getCost() + this.toppingCost));
         return output;
     }
 }
