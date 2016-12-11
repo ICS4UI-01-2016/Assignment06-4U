@@ -49,26 +49,12 @@ public class Sundae extends IceCream{
     @Override
     public String toString()
     {
-        // Converts the cost of the candy to dollars
-        String costToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
-        
-        // Determines the amount of space left in the row in the receipt to place the cost
-        int screenWidth = DessertShoppe.RECEIPT_WIDTH - costToDollars.length() - super.getName().length();
-        
         // Creates an output for this specifc food within the receipt (doesn't include the cost yet)
-        String output = this.toppingName + " Sundae with" + "\n"
-                + super.getName();
-        
-        // Ouputs out lines to space the information from the cost
-        for(int i = 0; i < screenWidth; i++){
-            output = output + " ";
-        }
-        
-        // Ouputs out lines to space the information from the cost
-        output = output + costToDollars;
-        
+        String output = this.toppingName + " Sundae with" + "\n" 
+                + super.toString();
+                              
         // Returns the fully created output
         return output;
     }
-    
+   
 }

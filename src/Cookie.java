@@ -49,15 +49,17 @@ public class Cookie extends DessertItem {
         // Converts the cost of the candy to dollars
         String costToDollars = DessertShoppe.cents2dollarsAndCents(this.getCost());
         
-        // Determines the amount of space left in the row in the receipt to place the cost
-        int screenWidth = DessertShoppe.RECEIPT_WIDTH - costToDollars.length() - super.getName().length();
+        // Determines the amount of spaces needed to align the item name and 
+        // item cost on the right side of the receipt
+        int spacingWidth = DessertShoppe.RECEIPT_WIDTH - costToDollars.length() - super.getName().length();
         
-        // Creates an output for this specifc food within the receipt also converting the price per pound to dollars (doesn't include the cost yet)
+        // Creates an output for this specific food within the receipt also converting 
+        // the price per pound to dollars (doesn't include the cost yet)
         String output = this.number + " @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePer12) + " /dz"
                 + "\n" + super.getName();
         
-        // Ouputs out lines to space the information from the cost
-        for(int i = 0; i < screenWidth; i++){
+        // Outputs spaces to right align the cost to the right size of receipt
+        for(int i = 0; i < spacingWidth; i++){
             output = output + " ";
         }
         
