@@ -29,8 +29,8 @@ public class Cookie extends DessertItem{
     
     @Override
     public String toString() {
-        String output = this.getNumber() + " @ $ " + this.getPricePer12()*0.01 
-                      + " /dz " + this.getName() + this.getCost()*0.01;
+        String output = this.getNumber() + " @ $ " + (this.getPricePer12()*0.01) 
+                      + " /dz " + this.getName() + (this.getCost()*0.01);
         return output;
     }
     

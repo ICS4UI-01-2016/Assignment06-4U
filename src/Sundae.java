@@ -30,7 +30,7 @@ public class Sundae extends IceCream{
     }
     
     public String toString() {
-        String output = this.getToppingName() + " with " + this.getName() + this.getCost()*0.01;
+        String output = this.getToppingName() + " with " + this.getName() + (this.getCost()*0.01);
         return output;
     }
 }

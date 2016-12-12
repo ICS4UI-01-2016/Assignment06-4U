@@ -28,8 +28,8 @@ public class Candy extends DessertItem {
 
     @Override
     public String toString() {
-        String output = this.getWeight() + " lbs. @ $" + this.getPricePerLbs()*0.01 
-                      + " /lb. \n" + this.getName() + this.getCost()*0.01;
+        String output = this.getWeight() + " lbs. @ " + "$" + (this.getPricePerLbs()*0.01) 
+                      + " /lb." + " \n" + this.getName() + (this.getCost()*0.01);
         return output;
     }
 
@@ -39,12 +39,4 @@ public class Candy extends DessertItem {
         return (int)(Math.round(cost)); 
     }
     
-    public String findLength(){
-        int nameLength = this.getName().length();
-        String cost = "" + (this.getCost()*0.01);
-        int costLength = cost.length();
-        int width = nameLength + costLength;
-        
-        
-    }
 }

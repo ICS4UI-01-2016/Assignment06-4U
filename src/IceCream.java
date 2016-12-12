@@ -22,7 +22,7 @@ public class IceCream extends DessertItem{
     
     @Override
     public String toString() {
-        String output = this.getName() + " " + this.getCost()*0.01;
+        String output = this.getName() + " " + (this.getCost()*0.01);
         return output;
     }
 }
