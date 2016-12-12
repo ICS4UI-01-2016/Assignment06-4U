@@ -25,6 +25,10 @@ public class Candy extends DessertItem {
         this.pricePerLbs = pricePerLbs;
     }
 
+    /**
+     * toString method outputs information about the candy
+     * @return returns the name, weight, and price per pounds of the candy
+     */
     public String toString() {
         String output = this.getName() + ", "
                 + this.weight + ", "
@@ -32,6 +36,10 @@ public class Candy extends DessertItem {
         return output;
     }
 
+    /**
+     * Constructor that calculates the cost of the candy
+     * @return returns the cost of the candy
+     */
     @Override
     public int getCost() {
         return (int) Math.round(weight * pricePerLbs);
