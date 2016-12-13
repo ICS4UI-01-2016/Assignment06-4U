@@ -58,4 +58,17 @@ public abstract class State {
     public float getCameraX(){
         return cam.position.x;
     }
+    
+    public float getCameraY(){
+        return cam.position.y;
+    }
+    
+    public float getViewWidth(){
+        return cam.viewportWidth;
+    }
+    
+    public float getViewHeight(){
+        return cam.viewportHeight;
+    }
+    
 }

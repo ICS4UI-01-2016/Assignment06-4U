@@ -50,7 +50,7 @@ public class PlayState extends State{
         // beginning of stuff to draw
         batch.begin();
         // draw the background
-        batch.draw(bg, 0, 0);
+        batch.draw(bg, getCameraX() - getViewWidth()/2, getCameraY() - getViewHeight()/2);
         // draw the bird
         bird.render(batch);
         // draw pipes
