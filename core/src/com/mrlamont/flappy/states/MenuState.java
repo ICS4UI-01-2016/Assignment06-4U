@@ -5,6 +5,7 @@
  */
 package com.mrlamont.flappy.states;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mrlamont.flappy.FlappyBird;
@@ -41,11 +42,15 @@ public class MenuState extends State{
 
     @Override
     public void handleInput() {
-        
+        if(Gdx.input.justTouched()){
+            StateManager gsm = getStateManager();
+            gsm.push(new PlayState(gsm));
+        }
     }
 
     @Override
     public void dispose() {
-        
+        bg.dispose();
+        button.dispose();
     }
 }
