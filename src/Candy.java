@@ -9,33 +9,67 @@
  */
 public class Candy extends DessertItem {
 
+    // instance variables to store weight and price/lb of candy
     private double weight;
     private int pricePerLbs;
 
+    /**
+     * constructor to initialize instance variables
+     * @param name of the candy
+     * @param weight of the candy
+     * @param pricePerLbs of the candy
+     */
     public Candy(String name, double weight, int pricePerLbs) {
         super(name);
         this.weight = weight;
         this.pricePerLbs = pricePerLbs;
     }
 
+    /**
+     * gets the weight of the candy
+     * @return the weight of the candy
+     */
     public double getWeight() {
         return this.weight;
     }
 
+    /**
+     * gets the price of candy per pound
+     * @return the price of candy per pound
+     */
     private int getPricePerLbs() {
         return this.pricePerLbs;
     }
 
+    /**
+     * represents information about the candy in a string
+     * @return the name, price per pound, weight, and total cost of the candy
+     */
     @Override
     public String toString() {
-        String output = this.getWeight() + " lbs. @ " + "$" + (this.getPricePerLbs()*0.01) 
-                      + " /lb." + " \n" + this.getName() + (this.getCost()*0.01);
-        return output;
+        // converts cents to dollars
+        String output = DessertShoppe.cents2dollarsAndCents(this.getCost());
+        // converts cost of candy into a string
+        String costLength = "" + this.getCost();
+        //calculates the amount of spaces between the cost of candy and the item name 
+        int spaces = 30 - super.getName().length() - costLength.length()-1;
+        // for loop used to print out the exact amount of calculated spaces
+        for (int i = 0; i < spaces; i++) {
+            output = " " + output;
+        }
+        return this.weight + " lbs. @ $" + this.pricePerLbs*0.01 + " /lb. \n" + super.getName() + output;
+        
     }
 
+    /**
+     * method used to calculate cost
+     * @return the total cost of the candy
+     */
     @Override
     public int getCost() {
+        // formula used to calculate the total cost of the candy
         double cost = this.weight*this.pricePerLbs;
+        // rounds total cost to an int form
         return (int)(Math.round(cost)); 
     }
     
