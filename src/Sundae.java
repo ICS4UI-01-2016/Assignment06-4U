@@ -9,16 +9,22 @@
  * 
  * Remember, we can use IceCream to do some of the heavy lifting for us!
  * 
- * @author YOURNAMEHERE
+ * @author Kevin 
  */
 public class Sundae extends IceCream{
-    
-private String toppingName;
+    //create string to store topping name
+String toppingName;
 
-    
-    public Sundae(String icName, int icCost, String toppingName, int toppingCost)
+    /**
+     * Sundae constructor
+     * @param icName name of ice cream
+     * @param icCost cost of ice cream
+     * @param toppingName name of topping
+     * @param toppingCost cost of topping 
+     */
+    public Sundae(String icName, int icCost, String toppingName, int  toppingCost)
     {
-        //store name of icing and cost in super
+        //store name of ice cream and cost in super
        super(icName, icCost + toppingCost);
        //initialize rest of variables
        this.toppingName = toppingName;
@@ -27,7 +33,10 @@ private String toppingName;
     }
     
 
-    
+    /**
+     * Returns the details of the sundae with proper spacing
+     * @return the print out of the cost and item in the proper format
+     */
 @Override
     public String toString()
     {
@@ -46,7 +55,7 @@ private String toppingName;
          output = " " +output ;
      }
      //return name of cookie along with cost
-        return  this.getName() + output ;
+        return this.toppingName + " Sundae with\n" + this.getName() + output ;
     }
 
     

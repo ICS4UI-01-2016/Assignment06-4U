@@ -9,14 +9,23 @@ public class IceCream extends DessertItem{
     //create private variable
 private int cost;
 
+/**
+ * Ice cream constructor
+ * @param name name of ice cream
+ * @param cost cost of ice cream
+ */
     public IceCream(String name, int cost)
     {
         //store name of candy in the super class
         super(name);
+        //initialize cost variable
         this.cost = cost;
     }
 
-  
+  /**
+   * Returns details of ice cream with proper spacing
+   * @return name and cost of ice cream
+   */
 @Override
     public String toString()
     {
@@ -35,6 +44,10 @@ private int cost;
         return  this.getName() + output ;
     }
 
+/**
+ * Returns the cost of the ice cream
+ * @return the cost of the ice cream
+ */
     @Override
     public int getCost() {
         return Math.round(this.cost);
